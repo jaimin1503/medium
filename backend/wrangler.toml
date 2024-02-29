@@ -1,7 +1,12 @@
 name = "backend"
 compatibility_date = "2023-12-01"
 
-# [vars]
+[vars]
+
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiZjBlNzBjODItYjEzMy00ZDdkLWFhYjctNzJlOTllZTE2MmY2IiwidGVuYW50X2lkIjoiMGE4ZjkyMDczNDVmMGYzNmQwNzcxZDZmNWJlNDc4ZTY5NTViOTE5YzhkYjNhNWVjNzE2MTMwZTAxZDNkODk3MyIsImludGVybmFsX3NlY3JldCI6IjNjNDAwN2ZhLWJhNDQtNDIxYy1hNmQwLWEzYWEzMWYxM2E0ZSJ9.V7nsV2H79T8X-2RdIPckfv0EVlMYy6LGXHddBcyIbOI"
+
+JWT_SECRET="MyJwtSecret"
+
 # MY_VARIABLE = "production_value"
 
 # [[kv_namespaces]]
@@ -16,5 +21,3 @@ compatibility_date = "2023-12-01"
 # binding = "DB"
 # database_name = "my-database"
 # database_id = ""
-
-DATABASE_URL="postgresql://jaimin1503:gP8jzocq2nXy@ep-floral-flower-a5v7f03i.us-east-2.aws.neon.tech/new-project?sslmode=require"
