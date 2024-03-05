@@ -2,7 +2,7 @@ import { Avatar } from "./BlogCard"
 import { Link } from "react-router-dom"
 
 interface AppbarProps{
-    authorName:string;
+    authorName?:string;
 }
 
 
