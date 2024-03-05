@@ -21,6 +21,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
         } catch(e) {
             alert("Error while signing up")
             // alert the user here that the request failed
+            console.log(e)
         }
     }
     

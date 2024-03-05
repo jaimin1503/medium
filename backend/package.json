@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "@100xdevs/common-app": "^1.0.3",
+    "@100xdevs/medium-common": "^1.0.0",
     "@prisma/client": "^5.10.2",
     "@prisma/extension-accelerate": "^0.6.3",
     "cors": "^2.8.5",
