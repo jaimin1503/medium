@@ -34,7 +34,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
                     </div>
                     <div className="text-slate-500">
                         {type === "signin" ? "Don't have an account?" : "Already have an account?" }
-                        <Link className="pl-2 underline" to={type === "signin" ? "/" : "/signin"}>
+                        <Link className="pl-2 underline" to={type === "signin" ? "/signup" : "/"}>
                             {type === "signin" ? "Sign up" : "Sign in"}
                         </Link>
                     </div>
@@ -75,7 +75,7 @@ interface LabelledInputType {
     name:string
 }
 
-function LabelledInput({ label, placeholder, onChange, type,name }: LabelledInputType) {
+function LabelledInput({ label, placeholder, onChange, type, name }: LabelledInputType) {
     return <div>
         <label className="block mb-2 text-sm text-black font-semibold pt-4">{label}</label>
         <input onChange={onChange} name={name} type={type || "text"} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder={placeholder} required />

@@ -1,10 +1,11 @@
 import { Appbar } from "../components/Appbar"
 import { BlogCard } from "../components/BlogCard"
 import { BlogSkeleton } from "../components/BlogSkeleton";
-import { useBlogs } from "../hooks";
+import { useBlogs,getUser } from "../hooks";
 
 export const Blogs = () => {
     const { loading, blogs } = useBlogs();
+    const { userName } = getUser();
 
     if (loading) {
         return <div>
@@ -22,7 +23,7 @@ export const Blogs = () => {
     }
 
     return <div>
-        <Appbar />
+        <Appbar authorName={userName} />
         <div  className="flex justify-center">
             <div>
                 {blogs.map(blog => <div key={blog.id}>

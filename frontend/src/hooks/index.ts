@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
+import { jwtDecode } from "jwt-decode";
 
 export interface Blog {
   content: string;
@@ -10,6 +11,30 @@ export interface Blog {
     name: string;
   };
 }
+export interface DecodedToken {
+  id: string;
+  name: string;
+}
+
+export const getUser = () => {
+  const [userName, setUserName] = useState("");
+  const token = localStorage.getItem("token");
+  useEffect(() => {
+    if (token) {
+      try {
+        const decodedToken: DecodedToken = jwtDecode(token);
+        // Assuming the user's name is stored in the token as 'name'
+        const { name } = decodedToken;
+        setUserName(name);
+      } catch (error) {
+        console.log("Error decoding token:", error);
+      }
+    }
+  });
+  return {
+    userName,
+  };
+};
 
 export const useBlog = ({ id }: { id: string }) => {
   const [loading, setLoading] = useState(true);
