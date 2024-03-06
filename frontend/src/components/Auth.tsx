@@ -19,7 +19,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
             localStorage.setItem("token", jwt);
             navigate("/blogs");
         } catch(e) {
-            alert("Error while signing up")
+            alert("Please provide proper inputs")
             // alert the user here that the request failed
             console.log(e)
         }
@@ -47,7 +47,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
                             name: e.target.value
                         })
                     }} /> : null}
-                    <LabelledInput label="Email" name="username" placeholder="jondoe@gmail.com" onChange={(e) => {
+                    <LabelledInput label="Email" type="email" name="username" placeholder="jondoe@gmail.com" onChange={(e) => {
                         setPostInputs({
                             ...postInputs,
                             username: e.target.value
@@ -72,7 +72,7 @@ interface LabelledInputType {
     placeholder: string;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     type?: string;
-    name:string
+    name:string;
 }
 
 function LabelledInput({ label, placeholder, onChange, type, name }: LabelledInputType) {
