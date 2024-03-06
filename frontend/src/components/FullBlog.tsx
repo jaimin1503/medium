@@ -7,14 +7,14 @@ export const FullBlog = ({ blog }: {blog: Blog}) => {
         <Appbar authorName={blog.author.name} />
         <div className="flex justify-center">
             <div className="px-10 w-full pt-200 pt-12 flex flex-col-reverse lg:flex-row">
-                <div className=" w-[90%] lg:w-[70%] mx-3">
-                    <div className="text-5xl font-extrabold">
+                <div className=" w-[95%] lg:w-[70%]">
+                    <div className="text-2xl md:text-5xl font-extrabold">
                         {blog.title}
                     </div>
                     <div className="text-slate-500 pt-2">
                         Post on 2nd December 2023
                     </div>
-                    <div className="pt-4 text-justify">
+                    <div className="pt-4 text-justify" style={{ whiteSpace: 'pre-wrap' }}>
                         {blog.content}
                     </div>
                 </div>
